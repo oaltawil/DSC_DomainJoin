@@ -11,12 +11,12 @@ Configuration JoinDomain
     (
         [Parameter(Mandatory = $true)]
         [ValidateNotNullorEmpty()]
-	    [String]
-	    $ComputerName,
+        [String]
+        $ComputerName,
         [Parameter(Mandatory = $true)]
         [ValidateNotNullorEmpty()]
-	    [String]
-	    $DomainName,
+        [String]
+        $DomainName,
         [Parameter(Mandatory = $true)]
         [ValidateNotNullorEmpty()]
         [System.Management.Automation.PSCredential]
