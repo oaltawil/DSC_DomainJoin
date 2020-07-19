@@ -20,7 +20,11 @@ Configuration JoinDomain
         [Parameter(Mandatory = $true)]
         [ValidateNotNullorEmpty()]
         [System.Management.Automation.PSCredential]
-        $Credential
+        $Credential,
+        [Parameter(Mandatory = $true)]
+        [ValidateNotNullorEmpty()]
+        [String]
+        $DomainJoinOU
     )
 
     Import-DscResource -Module ComputerManagementDsc
@@ -33,6 +37,7 @@ Configuration JoinDomain
             Name = $ComputerName
             DomainName = $DomainName
             Credential = $Credential # Credential to join to domain
+            JoinOU = $DomainJoinOU
         }
 
     }
