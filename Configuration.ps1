@@ -50,11 +50,5 @@ Configuration DomainJoin
             JoinOU = $DomainJoinOU
         }
 
-        PendingReboot RebootAfterDomainJoin
-        {
-            Name = "Reboot after Domain Join"
-            SkipPendingComputerRename = $false
-        }
-
     }
 }
