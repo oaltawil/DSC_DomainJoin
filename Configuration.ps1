@@ -5,7 +5,7 @@
         This configuration joins the computer to the specified domain and configures the PowerShell script execution policy
 #>
 
-Configuration JoinDomain
+Configuration DomainJoin
 {
     param
     (
@@ -48,6 +48,12 @@ Configuration JoinDomain
             DomainName = $DomainName
             Credential = $Credential # Credential to join to domain
             JoinOU = $DomainJoinOU
+        }
+
+        PendingReboot RebootAfterDomainJoin
+        {
+            Name = "Reboot after Domain Join"
+            SkipPendingComputerRename = $false
         }
 
     }
