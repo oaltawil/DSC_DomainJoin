@@ -36,12 +36,6 @@ Configuration DomainJoin
     Node localhost
     {
 
-        TimeZone SetTimeZone
-        {
-            IsSingleInstance = "Yes"
-            TimeZone = $TimeZoneName
-        }
-
         Computer JoinDomain
         {
             Name = $ComputerName
