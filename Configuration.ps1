@@ -36,18 +36,18 @@ Configuration JoinDomain
     Node localhost
     {
 
+        TimeZone SetTimeZone
+        {
+            IsSingleInstance = "Yes"
+            TimeZone = $TimeZoneName
+        }
+
         Computer JoinDomain
         {
             Name = $ComputerName
             DomainName = $DomainName
             Credential = $Credential # Credential to join to domain
             JoinOU = $DomainJoinOU
-        }
-
-        TimeZone SetTimeZone
-        {
-            IsSingleInstance = "Yes"
-            TimeZone = $TimeZoneName
         }
 
     }
