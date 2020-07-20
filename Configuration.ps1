@@ -24,7 +24,11 @@ Configuration JoinDomain
         [Parameter(Mandatory = $true)]
         [ValidateNotNullorEmpty()]
         [String]
-        $DomainJoinOU
+        $DomainJoinOU,
+        [Parameter(Mandatory = $true)]
+        [ValidateNotNullorEmpty()]
+        [String]
+        $TimeZoneName
     )
 
     Import-DscResource -Module ComputerManagementDsc
@@ -38,6 +42,12 @@ Configuration JoinDomain
             DomainName = $DomainName
             Credential = $Credential # Credential to join to domain
             JoinOU = $DomainJoinOU
+        }
+
+        TimeZone SetTimeZone
+        {
+            IsSingleInstance = "Yes"
+            TimeZone = $TimeZoneName
         }
 
     }
